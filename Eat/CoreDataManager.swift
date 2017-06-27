@@ -23,6 +23,41 @@ final class CoreDataManager {
             
         }
     }
+    var persistenStoreCoordinator : NSPersistentStoreCoordinator? {
+        get {
+            if self.persistenStoreCoordinator != nil {
+                return self.persistenStoreCoordinator
+            }
+            //store path
+            let documentStorePath = self.applicationDocumentsDirectory().path?.appending("OurRecipes.sqlite")
+            if(!FileManager.default.fileExists(atPath: documentStorePath!)) {
+                let defaultStorePath = Bundle.main.path(forResource: "OurRecipes", ofType: "sqlite")
+                if((defaultStorePath) != nil) {
+                    do {
+                        try FileManager.default.copyItem(atPath: defaultStorePath!, toPath: documentStorePath!)
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            self.persistenStoreCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.managedObjectModel!)
+            let defaultStoreURL:NSURL = NSURL .fileURL(withPath: documentStorePath!) as NSURL
+            do {
+                try self.persistenStoreCoordinator?.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: defaultStoreURL as URL, options: nil)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            let userStoreURL:NSURL = self.applicationDocumentsDirectory().appendingPathComponent("OurRecipes.sqlite")! as NSURL
+            do {
+                try self.persistenStoreCoordinator?.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: userStoreURL as URL, options: nil)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            return self.persistenStoreCoordinator            
+        } set {
+            
+        }
+    }
     private init(){
     
     }
