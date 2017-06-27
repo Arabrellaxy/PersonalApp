@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1010B9C11F02855500368401 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010B9C01F02855500368401 /* CoreDataManager.swift */; };
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
 		4F1041AC1F023B1600EAC82C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041AB1F023B1600EAC82C /* ViewController.swift */; };
 		4F1041AF1F023B1600EAC82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041AD1F023B1600EAC82C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1010B9C01F02855500368401 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DA5641A4512FD0D51AD418 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1010B9BF1F02852D00368401 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1010B9C01F02855500368401 /* CoreDataManager.swift */,
+			);
+			name = CoreDataManager;
+			sourceTree = "<group>";
+		};
 		4F10419D1F023B1600EAC82C = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		4F1041A81F023B1600EAC82C /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				1010B9BF1F02852D00368401 /* CoreDataManager */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
 				4F1041AB1F023B1600EAC82C /* ViewController.swift */,
 				4F1041AD1F023B1600EAC82C /* Main.storyboard */,
@@ -454,6 +465,7 @@
 			files = (
 				4F1041AC1F023B1600EAC82C /* ViewController.swift in Sources */,
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
+				1010B9C11F02855500368401 /* CoreDataManager.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XUW37V7S58;
 				INFOPLIST_FILE = Eat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.test.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XUW37V7S58;
 				INFOPLIST_FILE = Eat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.test.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -713,6 +727,7 @@
 				4F1041D31F023B1600EAC82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F1041D41F023B1600EAC82C /* Build configuration list for PBXNativeTarget "EatTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +736,7 @@
 				4F1041D61F023B1600EAC82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F1041D71F023B1600EAC82C /* Build configuration list for PBXNativeTarget "EatUITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +745,7 @@
 				4F1041D91F023B1600EAC82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
