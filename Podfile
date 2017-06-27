@@ -6,6 +6,7 @@ target 'Eat' do
   use_frameworks!
 
   # Pods for Eat
+  pod "Masonry"
 
   target 'EatTests' do
     inherit! :search_paths
