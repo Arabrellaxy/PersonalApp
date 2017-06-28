@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1010B9C11F02855500368401 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010B9C01F02855500368401 /* CoreDataManager.swift */; };
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
-		4F1041AC1F023B1600EAC82C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041AB1F023B1600EAC82C /* ViewController.swift */; };
 		4F1041AF1F023B1600EAC82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041AD1F023B1600EAC82C /* Main.storyboard */; };
 		4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */; };
 		4F1041B41F023B1600EAC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041B31F023B1600EAC82C /* Assets.xcassets */; };
 		4F1041B71F023B1600EAC82C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041B51F023B1600EAC82C /* LaunchScreen.storyboard */; };
 		4F1041C21F023B1600EAC82C /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041C11F023B1600EAC82C /* EatTests.swift */; };
 		4F1041CD1F023B1600EAC82C /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041CC1F023B1600EAC82C /* EatUITests.swift */; };
+		4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */; };
+		4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9F11F0352EC00F510F9 /* ViewController.swift */; };
 		98A08D3787F98046E78C9536 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE571E3AFCECE9197926524B /* Pods_EatTests.framework */; };
 		CE578AC870DCCB4A4607FC36 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */; };
 		D35BBC01158C4A86243CCC4F /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B8D82C367D095565CEF0A1 /* Pods_Eat.framework */; };
@@ -39,12 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1010B9C01F02855500368401 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DA5641A4512FD0D51AD418 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041A91F023B1600EAC82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F1041AB1F023B1600EAC82C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F1041AE1F023B1600EAC82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat.xcdatamodel; sourceTree = "<group>"; };
 		4F1041B31F023B1600EAC82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +54,8 @@
 		4F1041C81F023B1600EAC82C /* EatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041CC1F023B1600EAC82C /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		4F1041CE1F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4F22B9F11F0352EC00F510F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		527E098F2552DCEA04F0B230 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1789F885F87C60EB6539C1 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84F9576BF18E9BB65F83D31C /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,14 +93,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1010B9BF1F02852D00368401 /* CoreDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				1010B9C01F02855500368401 /* CoreDataManager.swift */,
-			);
-			name = CoreDataManager;
-			sourceTree = "<group>";
-		};
 		4F10419D1F023B1600EAC82C = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +118,14 @@
 		4F1041A81F023B1600EAC82C /* Eat */ = {
 			isa = PBXGroup;
 			children = (
-				1010B9BF1F02852D00368401 /* CoreDataManager */,
+				4F22B9F41F03538800F510F9 /* Resource */,
+				4F22B9F31F03535500F510F9 /* Config */,
+				4F22B9EA1F03529C00F510F9 /* Model */,
+				4F22B9EB1F03529C00F510F9 /* Request */,
+				4F22B9EC1F03529C00F510F9 /* Tools */,
+				4F22B9ED1F03529C00F510F9 /* ViewController */,
+				4F22B9EE1F03529C00F510F9 /* ViewModel */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
-				4F1041AB1F023B1600EAC82C /* ViewController.swift */,
 				4F1041AD1F023B1600EAC82C /* Main.storyboard */,
 				4F1041B31F023B1600EAC82C /* Assets.xcassets */,
 				4F1041B51F023B1600EAC82C /* LaunchScreen.storyboard */,
@@ -154,6 +151,65 @@
 				4F1041CE1F023B1600EAC82C /* Info.plist */,
 			);
 			path = EatUITests;
+			sourceTree = "<group>";
+		};
+		4F22B9EA1F03529C00F510F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F22B9EB1F03529C00F510F9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		4F22B9EC1F03529C00F510F9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		4F22B9ED1F03529C00F510F9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F22B9F11F0352EC00F510F9 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4F22B9EE1F03529C00F510F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F22B9F31F03535500F510F9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		4F22B9F41F03538800F510F9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4F22B9F51F03550E00F510F9 /* InterFace */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4F22B9F51F03550E00F510F9 /* InterFace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InterFace;
 			sourceTree = "<group>";
 		};
 		5FF2F57351D49EDB1845B878 /* Pods */ = {
@@ -463,9 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1041AC1F023B1600EAC82C /* ViewController.swift in Sources */,
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
-				1010B9C11F02855500368401 /* CoreDataManager.swift in Sources */,
+				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
+				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
