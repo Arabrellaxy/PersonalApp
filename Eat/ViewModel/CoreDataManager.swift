@@ -57,10 +57,19 @@ final class CoreDataManager {
     }()
     
     private init(){
-    
+        
     }
 
     func applicationDocumentsDirectory()->NSURL {
         return (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last)! as NSURL
     }
+    
+    func newEntityFromName(entityName:String) -> NSManagedObject {
+        let managedObjectContext = self.managedObjectContext
+        let entityDescription :NSEntityDescription = NSEntityDescription.entity(forEntityName: entityName, in: managedObjectContext)!
+        let managedObject : NSManagedObject = NSManagedObject.init(entity: entityDescription, insertInto: managedObjectContext)
+        return managedObject
+    }
+    
+    
 }

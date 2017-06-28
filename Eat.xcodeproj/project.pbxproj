@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
-		4F1041AF1F023B1600EAC82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041AD1F023B1600EAC82C /* Main.storyboard */; };
 		4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */; };
 		4F1041B41F023B1600EAC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041B31F023B1600EAC82C /* Assets.xcassets */; };
-		4F1041B71F023B1600EAC82C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041B51F023B1600EAC82C /* LaunchScreen.storyboard */; };
 		4F1041C21F023B1600EAC82C /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041C11F023B1600EAC82C /* EatTests.swift */; };
 		4F1041CD1F023B1600EAC82C /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041CC1F023B1600EAC82C /* EatUITests.swift */; };
 		4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */; };
 		4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9F11F0352EC00F510F9 /* ViewController.swift */; };
+		4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */; };
+		4F22BA021F038EBE00F510F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F22BA001F038EBE00F510F9 /* Main.storyboard */; };
+		4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */; };
+		4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */; };
+		4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA091F038FCB00F510F9 /* FoodsExtension.swift */; };
 		98A08D3787F98046E78C9536 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE571E3AFCECE9197926524B /* Pods_EatTests.framework */; };
 		CE578AC870DCCB4A4607FC36 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */; };
 		D35BBC01158C4A86243CCC4F /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B8D82C367D095565CEF0A1 /* Pods_Eat.framework */; };
@@ -43,10 +46,8 @@
 		31DA5641A4512FD0D51AD418 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041A91F023B1600EAC82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F1041AE1F023B1600EAC82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat.xcdatamodel; sourceTree = "<group>"; };
 		4F1041B31F023B1600EAC82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F1041B61F023B1600EAC82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F1041B81F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1041BD1F023B1600EAC82C /* EatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041C11F023B1600EAC82C /* EatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatTests.swift; sourceTree = "<group>"; };
@@ -56,6 +57,11 @@
 		4F1041CE1F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4F22B9F11F0352EC00F510F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F22BA001F038EBE00F510F9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foods+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foods+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4F22BA091F038FCB00F510F9 /* FoodsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsExtension.swift; sourceTree = "<group>"; };
 		527E098F2552DCEA04F0B230 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1789F885F87C60EB6539C1 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84F9576BF18E9BB65F83D31C /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,9 +132,7 @@
 				4F22B9ED1F03529C00F510F9 /* ViewController */,
 				4F22B9EE1F03529C00F510F9 /* ViewModel */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
-				4F1041AD1F023B1600EAC82C /* Main.storyboard */,
 				4F1041B31F023B1600EAC82C /* Assets.xcassets */,
-				4F1041B51F023B1600EAC82C /* LaunchScreen.storyboard */,
 				4F1041B81F023B1600EAC82C /* Info.plist */,
 				4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */,
 			);
@@ -156,6 +160,8 @@
 		4F22B9EA1F03529C00F510F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F22BA031F038F1800F510F9 /* CategoryModel */,
+				4F22BA041F038F1800F510F9 /* CoreDataModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,8 +214,27 @@
 		4F22B9F51F03550E00F510F9 /* InterFace */ = {
 			isa = PBXGroup;
 			children = (
+				4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */,
+				4F22BA001F038EBE00F510F9 /* Main.storyboard */,
 			);
 			path = InterFace;
+			sourceTree = "<group>";
+		};
+		4F22BA031F038F1800F510F9 /* CategoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F22BA091F038FCB00F510F9 /* FoodsExtension.swift */,
+			);
+			path = CategoryModel;
+			sourceTree = "<group>";
+		};
+		4F22BA041F038F1800F510F9 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */,
+				4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		5FF2F57351D49EDB1845B878 /* Pods */ = {
@@ -354,9 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1041B71F023B1600EAC82C /* LaunchScreen.storyboard in Resources */,
+				4F22BA021F038EBE00F510F9 /* Main.storyboard in Resources */,
 				4F1041B41F023B1600EAC82C /* Assets.xcassets in Resources */,
-				4F1041AF1F023B1600EAC82C /* Main.storyboard in Resources */,
+				4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +545,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
+				4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */,
+				4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */,
+				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
 				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
@@ -556,25 +584,6 @@
 			targetProxy = 4F1041C91F023B1600EAC82C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4F1041AD1F023B1600EAC82C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F1041AE1F023B1600EAC82C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4F1041B51F023B1600EAC82C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F1041B61F023B1600EAC82C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4F1041CF1F023B1600EAC82C /* Debug */ = {
@@ -684,6 +693,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.test.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "${SRC_ROOT}/$PROJECT_NAME/Model";
 			};
 			name = Debug;
 		};
@@ -699,6 +709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.test.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "${SRC_ROOT}/$PROJECT_NAME/Model";
 			};
 			name = Release;
 		};
