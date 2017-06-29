@@ -16,11 +16,14 @@ extension Foods {
                 food.name = value as? String
                 continue
             }
-            if key == "price" {
-                food.price = Double((value as? String)!)!
+            if key == "minPrice" {
+                food.minPrice = Double((value as? NSNumber)!)
                 continue
             }
-            
+            if key == "maxPrice" {
+                food.maxPrice = Double((value as? NSNumber)!)
+                continue
+            }
             if key == "selfMade" {
                 food.selfMade = Bool((value as? String)!)!
                 continue

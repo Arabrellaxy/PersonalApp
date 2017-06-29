@@ -19,25 +19,25 @@ final class CoreDataManager {
     
     private lazy var persistenStoreCoordinator : NSPersistentStoreCoordinator = {
         //store path
-        let  documentStorePath: String? = self.applicationDocumentsDirectory().path?.appending("OurRecipes.sqlite")
-        if(!FileManager.default.fileExists(atPath: documentStorePath!)) {
-            let defaultStorePath = Bundle.main.path(forResource: "OurRecipes", ofType: "sqlite")
-            if((defaultStorePath) != nil) {
-                do {
-                    try FileManager.default.copyItem(atPath: defaultStorePath!, toPath: documentStorePath!)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }
-        }
+//        let  documentStorePath: String? = self.applicationDocumentsDirectory().path?.appending(AppConfigConstants.storeName)
+//        if(!FileManager.default.fileExists(atPath: documentStorePath!)) {
+//            let defaultStorePath = Bundle.main.path(forResource: AppConfigConstants.storeName, ofType: "sqlite")
+//            if((defaultStorePath) != nil) {
+//                do {
+//                    try FileManager.default.copyItem(atPath: defaultStorePath!, toPath: documentStorePath!)
+//                } catch let error as NSError {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
         var persistenStoreCoordinator:NSPersistentStoreCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.managedObjectModel)
-        let defaultStoreURL:NSURL = NSURL .fileURL(withPath: documentStorePath!) as NSURL
-        do {
-            try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: defaultStoreURL as URL, options: nil)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        let userStoreURL:NSURL = self.applicationDocumentsDirectory().appendingPathComponent("OurRecipes.sqlite")! as NSURL
+//        let defaultStoreURL:NSURL = NSURL .fileURL(withPath: documentStorePath!) as NSURL
+//        do {
+//            try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: defaultStoreURL as URL, options: nil)
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+        let userStoreURL:NSURL = self.applicationDocumentsDirectory().appendingPathComponent(AppConfigConstants.storeName)! as NSURL
         do {
             try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: userStoreURL as URL, options: nil)
         } catch let error as NSError {
@@ -64,12 +64,39 @@ final class CoreDataManager {
         return (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last)! as NSURL
     }
     
-    func newEntityFromName(entityName:String) -> NSManagedObject {
+    func insertNewEntity(entityName:String) -> NSManagedObject {
         let managedObjectContext = self.managedObjectContext
-        let entityDescription :NSEntityDescription = NSEntityDescription.entity(forEntityName: entityName, in: managedObjectContext)!
-        let managedObject : NSManagedObject = NSManagedObject.init(entity: entityDescription, insertInto: managedObjectContext)
+        let managedObject : NSManagedObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: managedObjectContext)
+       
         return managedObject
     }
     
+    func save() -> Bool {
+        var result = true
+        do {
+            try managedObjectContext.save()
+        } catch {
+            result = false
+            fatalError("Failure to save context: \(error)")
+        }
+        return result
+    }
     
+    func findAllEntitiesByName(entityName:String) -> NSArray {
+        var results : NSArray
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: entityName)
+        do {
+            results = try managedObjectContext.fetch(fetchRequest) as NSArray
+        } catch {
+            fatalError("Failed to fetch entity: \(error)")
+        }
+        return results
+    }
+    
+//    func insertNewEntitiesFromArray(entities:NSArray) -> Bool {
+//        var result = true
+//        
+//        return result
+//
+//    }
 }

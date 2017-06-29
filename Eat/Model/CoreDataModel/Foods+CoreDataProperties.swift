@@ -18,7 +18,8 @@ extension Foods {
 
     @NSManaged public var mealsType: Int32
     @NSManaged public var name: String?
-    @NSManaged public var price: Double
+    @NSManaged public var minPrice: Double
+    @NSManaged public var maxPrice: Double
     @NSManaged public var selfMade: Bool
     @NSManaged public var taste: Int32
 

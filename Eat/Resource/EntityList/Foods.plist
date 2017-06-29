@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+        <dict>
+            <key>name</key>
+            <string>麻辣香锅</string>
+            <key>mealsType</key>
+            <integer>1</integer>
+            <key>selfMade</key>
+            <false/>
+            <key>taste</key>
+            <integer>3</integer>
+            <key>minPrice</key>
+            <real>18</real>
+            <key>maxPrice</key>
+            <real>28</real>
+        </dict>
+    </array>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>豚骨面</string>
+            <key>mealsType</key>
+            <integer>1</integer>
+            <key>selfMade</key>
+            <false/>
+            <key>taste</key>
+            <integer>0</integer>
+            <key>minPrice</key>
+            <real>6</real>
+            <key>maxPrice</key>
+            <real>15</real>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>麻辣烫</string>
+            <key>mealsType</key>
+            <integer>1</integer>
+            <key>selfMade</key>
+            <false/>
+            <key>taste</key>
+            <integer>3</integer>
+            <key>minPrice</key>
+            <real>5</real>
+            <key>maxPrice</key>
+            <real>10</real>
+        </dict>
+    </array>
+</array>
+</plist>
