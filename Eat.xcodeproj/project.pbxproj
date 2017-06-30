@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
 		4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */; };
-		4F1041B41F023B1600EAC82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1041B31F023B1600EAC82C /* Assets.xcassets */; };
 		4F1041C21F023B1600EAC82C /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041C11F023B1600EAC82C /* EatTests.swift */; };
 		4F1041CD1F023B1600EAC82C /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041CC1F023B1600EAC82C /* EatUITests.swift */; };
 		4F14536C1F04A1AF006DF308 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14536B1F04A1AF006DF308 /* Config.swift */; };
 		4F14536F1F04ADD2006DF308 /* Foods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F14536E1F04ADD2006DF308 /* Foods.plist */; };
 		4F1453711F04D105006DF308 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453701F04D105006DF308 /* UserDefaultHelper.swift */; };
 		4F1453731F04D4DF006DF308 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453721F04D4DF006DF308 /* DataImporter.swift */; };
+		4F14537A1F063349006DF308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1453791F063349006DF308 /* Assets.xcassets */; };
+		4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14537B1F0639C8006DF308 /* TabbarController.swift */; };
+		4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14537F1F0645FC006DF308 /* ChooseFood.swift */; };
+		4F1453821F06465C006DF308 /* ChooseFood.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1453811F06465C006DF308 /* ChooseFood.xib */; };
 		4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */; };
 		4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9F11F0352EC00F510F9 /* ViewController.swift */; };
 		4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */; };
@@ -51,7 +54,6 @@
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041A91F023B1600EAC82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat.xcdatamodel; sourceTree = "<group>"; };
-		4F1041B31F023B1600EAC82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1041B81F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1041BD1F023B1600EAC82C /* EatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041C11F023B1600EAC82C /* EatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatTests.swift; sourceTree = "<group>"; };
@@ -63,6 +65,10 @@
 		4F14536E1F04ADD2006DF308 /* Foods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foods.plist; sourceTree = "<group>"; };
 		4F1453701F04D105006DF308 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultHelper.swift; path = Eat/Resource/EntityList/UserDefaultHelper.swift; sourceTree = SOURCE_ROOT; };
 		4F1453721F04D4DF006DF308 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
+		4F1453791F063349006DF308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F14537B1F0639C8006DF308 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		4F14537F1F0645FC006DF308 /* ChooseFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFood.swift; sourceTree = "<group>"; };
+		4F1453811F06465C006DF308 /* ChooseFood.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseFood.xib; sourceTree = "<group>"; };
 		4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4F22B9F11F0352EC00F510F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		4F1041A81F023B1600EAC82C /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				4F14537D1F0645CC006DF308 /* View */,
 				4F22B9F41F03538800F510F9 /* Resource */,
 				4F22B9F31F03535500F510F9 /* Config */,
 				4F22B9EA1F03529C00F510F9 /* Model */,
@@ -140,7 +147,6 @@
 				4F22B9ED1F03529C00F510F9 /* ViewController */,
 				4F22B9EE1F03529C00F510F9 /* ViewModel */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
-				4F1041B31F023B1600EAC82C /* Assets.xcassets */,
 				4F1041B81F023B1600EAC82C /* Info.plist */,
 				4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */,
 			);
@@ -173,6 +179,22 @@
 			path = EntityList;
 			sourceTree = "<group>";
 		};
+		4F14537D1F0645CC006DF308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F14537E1F0645ED006DF308 /* HomePage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F14537E1F0645ED006DF308 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				4F14537F1F0645FC006DF308 /* ChooseFood.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		4F22B9EA1F03529C00F510F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				4F22B9F11F0352EC00F510F9 /* ViewController.swift */,
+				4F14537B1F0639C8006DF308 /* TabbarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -226,6 +249,7 @@
 		4F22B9F41F03538800F510F9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4F1453791F063349006DF308 /* Assets.xcassets */,
 				4F14536D1F04ADB5006DF308 /* EntityList */,
 				4F22B9F51F03550E00F510F9 /* InterFace */,
 			);
@@ -237,6 +261,7 @@
 			children = (
 				4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */,
 				4F22BA001F038EBE00F510F9 /* Main.storyboard */,
+				4F1453811F06465C006DF308 /* ChooseFood.xib */,
 			);
 			path = InterFace;
 			sourceTree = "<group>";
@@ -402,8 +427,9 @@
 			files = (
 				4F14536F1F04ADD2006DF308 /* Foods.plist in Resources */,
 				4F22BA021F038EBE00F510F9 /* Main.storyboard in Resources */,
-				4F1041B41F023B1600EAC82C /* Assets.xcassets in Resources */,
 				4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */,
+				4F1453821F06465C006DF308 /* ChooseFood.xib in Resources */,
+				4F14537A1F063349006DF308 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */,
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
 				4F1453711F04D105006DF308 /* UserDefaultHelper.swift in Sources */,
 				4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */,
@@ -573,6 +600,7 @@
 				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
 				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
 				4F14536C1F04A1AF006DF308 /* Config.swift in Sources */,
+				4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
 				4F1453731F04D4DF006DF308 /* DataImporter.swift in Sources */,

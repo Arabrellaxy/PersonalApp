@@ -22,5 +22,4 @@ extension Foods {
     @NSManaged public var maxPrice: Double
     @NSManaged public var selfMade: Bool
     @NSManaged public var taste: Int32
-
 }

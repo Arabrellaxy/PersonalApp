@@ -18,25 +18,7 @@ final class CoreDataManager {
     }()
     
     private lazy var persistenStoreCoordinator : NSPersistentStoreCoordinator = {
-        //store path
-//        let  documentStorePath: String? = self.applicationDocumentsDirectory().path?.appending(AppConfigConstants.storeName)
-//        if(!FileManager.default.fileExists(atPath: documentStorePath!)) {
-//            let defaultStorePath = Bundle.main.path(forResource: AppConfigConstants.storeName, ofType: "sqlite")
-//            if((defaultStorePath) != nil) {
-//                do {
-//                    try FileManager.default.copyItem(atPath: defaultStorePath!, toPath: documentStorePath!)
-//                } catch let error as NSError {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
         var persistenStoreCoordinator:NSPersistentStoreCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.managedObjectModel)
-//        let defaultStoreURL:NSURL = NSURL .fileURL(withPath: documentStorePath!) as NSURL
-//        do {
-//            try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: defaultStoreURL as URL, options: nil)
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
         let userStoreURL:NSURL = self.applicationDocumentsDirectory().appendingPathComponent(AppConfigConstants.storeName)! as NSURL
         do {
             try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: userStoreURL as URL, options: nil)
@@ -82,9 +64,12 @@ final class CoreDataManager {
         return result
     }
     
-    func findAllEntitiesByName(entityName:String) -> NSArray {
+    func findAllEntitiesByName(entityName:String,pridicate:NSPredicate?) -> NSArray {
         var results : NSArray
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: entityName)
+        if pridicate != nil {
+            fetchRequest.predicate = pridicate
+        }
         do {
             results = try managedObjectContext.fetch(fetchRequest) as NSArray
         } catch {
@@ -93,10 +78,4 @@ final class CoreDataManager {
         return results
     }
     
-//    func insertNewEntitiesFromArray(entities:NSArray) -> Bool {
-//        var result = true
-//        
-//        return result
-//
-//    }
 }

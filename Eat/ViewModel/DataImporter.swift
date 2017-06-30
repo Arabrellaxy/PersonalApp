@@ -14,7 +14,7 @@ class DataImporter {
         let resourceType : String = fullResourceName.pathExtension
         let entityName : String = fullResourceName.deletingPathExtension
 
-        let total : NSInteger = CoreDataManager.shareInstance.findAllEntitiesByName(entityName: entityName).count
+        let total : NSInteger = CoreDataManager.shareInstance.findAllEntitiesByName(entityName: entityName,pridicate: nil).count
         var localCount : NSInteger = 0;
         if let path = Bundle.main.path(forResource: entityName, ofType: resourceType) {
             
