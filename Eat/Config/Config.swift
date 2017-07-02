@@ -14,3 +14,20 @@ struct AppConfigConstants {
     static let externalResourceName = "Foods.plist"
 }
 
+enum FoodTaste {
+    case light //清淡
+    case hardcore //重口
+    case normal //正常
+    case nutrition //营养
+    
+    static let allValues = [light, hardcore, normal,nutrition]
+
+}
+
+enum MealType {
+    case breakFast
+    case lunch
+    case dinner
+    
+    static let allValues = [breakFast,lunch,dinner]
+}

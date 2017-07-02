@@ -13,7 +13,7 @@ extension Foods {
         let food : Foods = Foods()
         for (key,value) in foodDic {
             if key == "name" {
-                food.name = value as? String
+                food.name = (value as? String)!
                 continue
             }
             if key == "minPrice" {
@@ -38,6 +38,12 @@ extension Foods {
                 food.taste =  Int32((value as? String)!)!
                 continue
             }
+            
+            if key == "foodID" {
+                food.foodID =  (value as? String)!
+                continue
+            }
+
         }
         return food
     }

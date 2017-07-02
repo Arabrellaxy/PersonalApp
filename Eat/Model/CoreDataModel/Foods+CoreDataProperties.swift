@@ -16,8 +16,14 @@ extension Foods {
         return NSFetchRequest<Foods>(entityName: "Foods")
     }
 
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        foodID = UUID.init().uuidString
+    }
+    
     @NSManaged public var mealsType: Int32
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
+    @NSManaged public var foodID: String
     @NSManaged public var minPrice: Double
     @NSManaged public var maxPrice: Double
     @NSManaged public var selfMade: Bool

@@ -16,6 +16,8 @@
             <real>18</real>
             <key>maxPrice</key>
             <real>28</real>
+            <key>foodID</key>
+            <string>ADFFF584-6762-4952-9B2E-683109396B04</string>
         </dict>
     </array>
     <array>
@@ -32,6 +34,8 @@
             <real>6</real>
             <key>maxPrice</key>
             <real>15</real>
+            <key>foodID</key>
+            <string>DF901163-B2F7-4673-94C6-F2B4FE580188</string>
         </dict>
         <dict>
             <key>name</key>
@@ -46,6 +50,8 @@
             <real>5</real>
             <key>maxPrice</key>
             <real>10</real>
+            <key>foodID</key>
+            <string>A36F22E6-2ABB-40B8-B6D3-30D02900764F</string>
         </dict>
     </array>
 </array>

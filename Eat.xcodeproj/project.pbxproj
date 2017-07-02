@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103559AE1F069BA4008593BF /* ChooseFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103559AD1F069BA4008593BF /* ChooseFoodTableViewController.swift */; };
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
 		4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */; };
 		4F1041C21F023B1600EAC82C /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041C11F023B1600EAC82C /* EatTests.swift */; };
@@ -18,7 +19,6 @@
 		4F14537A1F063349006DF308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1453791F063349006DF308 /* Assets.xcassets */; };
 		4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14537B1F0639C8006DF308 /* TabbarController.swift */; };
 		4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14537F1F0645FC006DF308 /* ChooseFood.swift */; };
-		4F1453821F06465C006DF308 /* ChooseFood.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1453811F06465C006DF308 /* ChooseFood.xib */; };
 		4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */; };
 		4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22B9F11F0352EC00F510F9 /* ViewController.swift */; };
 		4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		103559AD1F069BA4008593BF /* ChooseFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFoodTableViewController.swift; sourceTree = "<group>"; };
 		12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DA5641A4512FD0D51AD418 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +69,6 @@
 		4F1453791F063349006DF308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F14537B1F0639C8006DF308 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		4F14537F1F0645FC006DF308 /* ChooseFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFood.swift; sourceTree = "<group>"; };
-		4F1453811F06465C006DF308 /* ChooseFood.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseFood.xib; sourceTree = "<group>"; };
 		4F22B9EF1F0352CF00F510F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4F22B9F11F0352EC00F510F9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -225,6 +225,7 @@
 			children = (
 				4F22B9F11F0352EC00F510F9 /* ViewController.swift */,
 				4F14537B1F0639C8006DF308 /* TabbarController.swift */,
+				103559AD1F069BA4008593BF /* ChooseFoodTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -261,7 +262,6 @@
 			children = (
 				4F22B9FF1F038EBE00F510F9 /* LaunchScreen.storyboard */,
 				4F22BA001F038EBE00F510F9 /* Main.storyboard */,
-				4F1453811F06465C006DF308 /* ChooseFood.xib */,
 			);
 			path = InterFace;
 			sourceTree = "<group>";
@@ -428,7 +428,6 @@
 				4F14536F1F04ADD2006DF308 /* Foods.plist in Resources */,
 				4F22BA021F038EBE00F510F9 /* Main.storyboard in Resources */,
 				4F22BA011F038EBE00F510F9 /* LaunchScreen.storyboard in Resources */,
-				4F1453821F06465C006DF308 /* ChooseFood.xib in Resources */,
 				4F14537A1F063349006DF308 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +598,7 @@
 				4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */,
 				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
 				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
+				103559AE1F069BA4008593BF /* ChooseFoodTableViewController.swift in Sources */,
 				4F14536C1F04A1AF006DF308 /* Config.swift in Sources */,
 				4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
