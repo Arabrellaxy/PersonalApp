@@ -11,7 +11,7 @@ import UIKit
 
 
 class ChooseFoodTableViewController:
-UITableViewController,ChooseFoodTableViewCellDelegate {
+UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
     let tableViewDataSource:NSArray = [
         "口味",
         "类型",
@@ -20,24 +20,21 @@ UITableViewController,ChooseFoodTableViewCellDelegate {
     let collectionViewDataSource:NSArray = [
        FoodTaste.allValues,
        MealType.allValues,
-       [false,true]
+       SelfMade.allValues
     ]
 
     override func awakeFromNib() {
-        self.tableView.estimatedRowHeight = 100
+        self.tableView.estimatedRowHeight = 60
+        var frame:CGRect = CGRect.zero
+        frame.size.height = 1
+        self.tableView.tableHeaderView = UIView.init(frame: frame)
+        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
+        view.backgroundColor = UIColor.orange
+        self.tableView.tableFooterView = view
     }
     
     override func viewDidLoad() {
         
-    }
-    
-    func numberOfItemsInCollectionView(cell: ChooseFoodTableViewCell) -> NSInteger {
-        let index : NSInteger = (tableView.indexPath(for: cell)?.row)!
-        return (self.collectionViewDataSource.object(at: index) as! NSArray).count
-    }
-    func itemAtIndexPath(cell: ChooseFoodTableViewCell,index:NSInteger) -> NSString {
-        let index : NSInteger = (tableView.indexPath(for: cell)?.row)!
-        return (self.collectionViewDataSource.object(at: index) as! NSArray).object(at: index) as! NSString
     }
     
 //    Table View Delegate & DataSource
@@ -50,11 +47,68 @@ UITableViewController,ChooseFoodTableViewCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ChooseFoodTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! ChooseFoodTableViewCell
-        cell.delegate = self
+        let cell:ChooseFoodTableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! ChooseFoodTableViewCell
+        cell.collectionView.delegate = self;
+        cell.collectionView.dataSource = self;
+        if let layout = cell.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.estimatedItemSize = CGSize.init(width: 60, height: 40)
+            layout.sectionInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 0)
+        }
+        cell.collectionView.tag = indexPath.section;
         return cell;
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tableViewDataSource.object(at: section) as? String
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if view.isKind(of: UITableViewHeaderFooterView.self) {
+            (view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor.lightGray
+        }
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50;
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        
+//        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
+//        view.backgroundColor = UIColor.orange
+//        return view
+//    }
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 50
+//    }
+//    
+    //    Collection View Delegate & DataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (collectionViewDataSource.object(at: collectionView.tag) as! NSArray).count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : ChooseFoodCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! ChooseFoodCollectionCell
+        var title:String
+        if collectionView.tag == 0 {
+            let allTypes : [FoodTaste] = (collectionViewDataSource.object(at: collectionView.tag)) as! [FoodTaste]
+            title = allTypes[indexPath.row].description
+            
+        } else if collectionView.tag == 1 {
+            let allTypes : [MealType] = (collectionViewDataSource.object(at: collectionView.tag)) as! [MealType]
+            title = allTypes[indexPath.row].description
+
+        } else {
+            let allTypes : [SelfMade] = (collectionViewDataSource.object(at: collectionView.tag)) as! [SelfMade]
+            title = allTypes[indexPath.row].description
+        }
+        cell.optionButton.setTitle(title, for: UIControlState.normal)
+        return cell
+    }
+
     
 }
 
@@ -65,28 +119,7 @@ class ChooseFoodCollectionCell: UICollectionViewCell {
     }
 }
 
-class ChooseFoodTableViewCell : UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
+class ChooseFoodTableViewCell : UITableViewCell{
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var delegate: ChooseFoodTableViewCellDelegate?
-    //    Collection View Delegate & DataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return (delegate?.numberOfItemsInCollectionView(cell: self))!
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ChooseFoodCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! ChooseFoodCollectionCell
-        let title : NSString = (delegate?.itemAtIndexPath(cell: self, index: indexPath.row))!
-            cell.optionButton.setTitle(title as String, for: UIControlState.normal)
-        return cell
-    }
-}
-
-protocol ChooseFoodTableViewCellDelegate {
-    func numberOfItemsInCollectionView(cell:ChooseFoodTableViewCell) ->NSInteger
-    func itemAtIndexPath(cell:ChooseFoodTableViewCell,index:NSInteger) ->NSString
 }

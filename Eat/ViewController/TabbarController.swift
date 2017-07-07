@@ -13,5 +13,7 @@ class TabbarController:UITabBarController {
     override func awakeFromNib() {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for: UIControlState.normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: UIControlState.normal)
+        self.view.backgroundColor = UIColor.white
     }
+    
 }

@@ -13,7 +13,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabbar:TabbarController {
+        get {
+            return self.window?.rootViewController as! TabbarController
+        }
 
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         DataImporter().importDataByLocalResourceName(resourceName: AppConfigConstants.externalResourceName)
