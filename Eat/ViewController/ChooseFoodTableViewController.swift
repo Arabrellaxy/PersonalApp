@@ -28,9 +28,12 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
         var frame:CGRect = CGRect.zero
         frame.size.height = 1
         self.tableView.tableHeaderView = UIView.init(frame: frame)
-        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
-        view.backgroundColor = UIColor.orange
-        self.tableView.tableFooterView = view
+        let button : UIButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
+        button.backgroundColor = UIColor.orange
+        button.setTitle("🎲", for: UIControlState.normal)
+        button.addTarget(self, action: #selector(startChooseFood), for: UIControlEvents.touchUpInside)
+        self.tableView.tableFooterView = button
+        self.tableView.isScrollEnabled = false
     }
     
     override func viewDidLoad() {
@@ -53,6 +56,7 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
         if let layout = cell.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.estimatedItemSize = CGSize.init(width: 60, height: 40)
             layout.sectionInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 0)
+            layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         }
         cell.collectionView.tag = indexPath.section;
         return cell;
@@ -71,16 +75,6 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
         return 50;
     }
     
-//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        
-//        let view : UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
-//        view.backgroundColor = UIColor.orange
-//        return view
-//    }
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 50
-//    }
-//    
     //    Collection View Delegate & DataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -109,6 +103,12 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    func startChooseFood(sender:UIButton){
+        
+    }
     
 }
 
@@ -116,6 +116,7 @@ class ChooseFoodCollectionCell: UICollectionViewCell {
     @IBOutlet weak var optionButton: UIButton!
     
     @IBAction func optionButtonClicked(_ sender: Any) {
+        
     }
 }
 
