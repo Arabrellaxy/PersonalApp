@@ -14,7 +14,6 @@
 		4F1041CD1F023B1600EAC82C /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041CC1F023B1600EAC82C /* EatUITests.swift */; };
 		4F14536C1F04A1AF006DF308 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14536B1F04A1AF006DF308 /* Config.swift */; };
 		4F14536F1F04ADD2006DF308 /* Foods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F14536E1F04ADD2006DF308 /* Foods.plist */; };
-		4F1453711F04D105006DF308 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453701F04D105006DF308 /* UserDefaultHelper.swift */; };
 		4F1453731F04D4DF006DF308 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1453721F04D4DF006DF308 /* DataImporter.swift */; };
 		4F14537A1F063349006DF308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1453791F063349006DF308 /* Assets.xcassets */; };
 		4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14537B1F0639C8006DF308 /* TabbarController.swift */; };
@@ -26,6 +25,8 @@
 		4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */; };
 		4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */; };
 		4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F22BA091F038FCB00F510F9 /* FoodsExtension.swift */; };
+		4F6FA8781F14CF9700243813 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FA8771F14CEC300243813 /* UserDefaultHelper.swift */; };
+		4F6FA87A1F14D34E00243813 /* ProjectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FA8791F14D34E00243813 /* ProjectHelper.swift */; };
 		98A08D3787F98046E78C9536 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE571E3AFCECE9197926524B /* Pods_EatTests.framework */; };
 		CE578AC870DCCB4A4607FC36 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */; };
 		D35BBC01158C4A86243CCC4F /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B8D82C367D095565CEF0A1 /* Pods_Eat.framework */; };
@@ -64,7 +65,6 @@
 		4F1041CE1F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F14536B1F04A1AF006DF308 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4F14536E1F04ADD2006DF308 /* Foods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Foods.plist; sourceTree = "<group>"; };
-		4F1453701F04D105006DF308 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultHelper.swift; path = Eat/Resource/EntityList/UserDefaultHelper.swift; sourceTree = SOURCE_ROOT; };
 		4F1453721F04D4DF006DF308 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
 		4F1453791F063349006DF308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F14537B1F0639C8006DF308 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
@@ -76,6 +76,8 @@
 		4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foods+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foods+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4F22BA091F038FCB00F510F9 /* FoodsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsExtension.swift; sourceTree = "<group>"; };
+		4F6FA8771F14CEC300243813 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		4F6FA8791F14D34E00243813 /* ProjectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHelper.swift; sourceTree = "<group>"; };
 		527E098F2552DCEA04F0B230 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1789F885F87C60EB6539C1 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84F9576BF18E9BB65F83D31C /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,12 +140,12 @@
 		4F1041A81F023B1600EAC82C /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				4F6FA8761F14CEA800243813 /* Utils */,
 				4F14537D1F0645CC006DF308 /* View */,
 				4F22B9F41F03538800F510F9 /* Resource */,
 				4F22B9F31F03535500F510F9 /* Config */,
 				4F22B9EA1F03529C00F510F9 /* Model */,
 				4F22B9EB1F03529C00F510F9 /* Request */,
-				4F22B9EC1F03529C00F510F9 /* Utils */,
 				4F22B9ED1F03529C00F510F9 /* ViewController */,
 				4F22B9EE1F03529C00F510F9 /* ViewModel */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
@@ -211,15 +213,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		4F22B9EC1F03529C00F510F9 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				4F1453701F04D105006DF308 /* UserDefaultHelper.swift */,
-			);
-			name = Utils;
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		4F22B9ED1F03529C00F510F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +274,15 @@
 				4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */,
 			);
 			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		4F6FA8761F14CEA800243813 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4F6FA8771F14CEC300243813 /* UserDefaultHelper.swift */,
+				4F6FA8791F14D34E00243813 /* ProjectHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5FF2F57351D49EDB1845B878 /* Pods */ = {
@@ -593,7 +595,6 @@
 			files = (
 				4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */,
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
-				4F1453711F04D105006DF308 /* UserDefaultHelper.swift in Sources */,
 				4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */,
 				4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */,
 				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
@@ -603,7 +604,9 @@
 				4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
+				4F6FA8781F14CF9700243813 /* UserDefaultHelper.swift in Sources */,
 				4F1453731F04D4DF006DF308 /* DataImporter.swift in Sources */,
+				4F6FA87A1F14D34E00243813 /* ProjectHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +744,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XUW37V7S58;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Eat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -758,6 +762,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XUW37V7S58;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Eat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

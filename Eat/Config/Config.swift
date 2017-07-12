@@ -14,8 +14,8 @@ struct AppConfigConstants {
     static let externalResourceName = "Foods.plist"
 }
 
-enum FoodTaste {
-    case light //清淡
+enum FoodTaste:Int {
+    case light = 0 //清淡
     case hardcore //重口
     case normal //正常
     case nutrition //营养
@@ -38,7 +38,7 @@ enum FoodTaste {
     }
 }
 
-enum MealType {
+enum MealType:Int {
     case breakFast
     case lunch
     case dinner
@@ -59,11 +59,11 @@ enum MealType {
     }
 }
 
-enum SelfMade {
-    case selfMade
+enum SelfMade:Int {
     case buy
+    case selfMade
     
-    static let allValues = [selfMade,buy]
+    static let allValues = [buy,selfMade]
     
     var description : String {
         get {

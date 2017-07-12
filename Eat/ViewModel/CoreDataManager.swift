@@ -78,4 +78,13 @@ final class CoreDataManager {
         return results
     }
     
+    
+    func chooseFoodByPredicate(pridicate:NSPredicate?) -> Foods {
+        let foods:NSArray = self.findAllEntitiesByName(entityName: "Foods", pridicate: pridicate)
+        let x = UInt32(foods.count)
+        
+        let r = Int(arc4random_uniform(x))
+        return foods[r] as! Foods
+    }
+    
 }

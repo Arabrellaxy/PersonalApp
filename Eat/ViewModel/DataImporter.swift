@@ -24,12 +24,25 @@ class DataImporter {
                     localCount += ((tempArray as? NSArray)?.count)!
                 }
                 if localCount != total {
-                    let lastArray:NSArray = array.object(at: array.count-1) as! NSArray
-                    for tempDictionary in lastArray  {
-                        if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
-                            let food:Foods = CoreDataManager.shareInstance.insertNewEntity(entityName: entityName) as! Foods
-                            for (key,value) in tempDictionary {
-                                food.setValue(value, forKey: key)
+                    if total == 0 {
+                        for foodArray:NSArray in (array as! [NSArray]) {
+                            for tempDictionary in foodArray  {
+                                if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
+                                    let food:Foods = CoreDataManager.shareInstance.insertNewEntity(entityName: entityName) as! Foods
+                                    for (key,value) in tempDictionary {
+                                        food.setValue(value, forKey: key)
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        let lastArray:NSArray = array.object(at: array.count-1) as! NSArray
+                        for tempDictionary in lastArray  {
+                            if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
+                                let food:Foods = CoreDataManager.shareInstance.insertNewEntity(entityName: entityName) as! Foods
+                                for (key,value) in tempDictionary {
+                                    food.setValue(value, forKey: key)
+                                }
                             }
                         }
                     }

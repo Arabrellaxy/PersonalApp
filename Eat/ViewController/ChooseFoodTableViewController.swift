@@ -99,25 +99,72 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
             let allTypes : [SelfMade] = (collectionViewDataSource.object(at: collectionView.tag)) as! [SelfMade]
             title = allTypes[indexPath.row].description
         }
-        cell.optionButton.setTitle(title, for: UIControlState.normal)
+        cell.titleLabel.text = title
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
+    
     func startChooseFood(sender:UIButton){
         
+        let sections:Int = self.tableView.numberOfSections
+        let result:NSMutableArray = NSMutableArray.init()
+        for section in 0..<sections {
+            let indexPath:IndexPath = IndexPath.init(row: 0, section: section)
+            let cell:ChooseFoodTableViewCell = tableView.cellForRow(at: indexPath) as! ChooseFoodTableViewCell
+            let collectionView:UICollectionView = cell.collectionView
+            let array:[IndexPath]? = collectionView.indexPathsForSelectedItems
+            if array?.isEmpty == false {
+                if collectionView.tag == 0 {
+                    let allTypes : [FoodTaste] = (collectionViewDataSource.object(at: collectionView.tag)) as! [FoodTaste]
+                    result.add(allTypes[array![0].row].rawValue)
+                } else if collectionView.tag == 1 {
+                    let allTypes : [MealType] = (collectionViewDataSource.object(at: collectionView.tag)) as! [MealType]
+                    result.add(allTypes[array![0].row].rawValue)
+                } else {
+                    let allTypes : [SelfMade] = (collectionViewDataSource.object(at: collectionView.tag)) as! [SelfMade]
+                    result.add(allTypes[array![0].row].rawValue)
+                }
+            } else {
+                return
+            }
+        }
+        if result.count == tableViewDataSource.count {
+            //start to choose food
+            let predicate:NSPredicate = NSPredicate(format: "%K = %d", "taste", result[0] as! Int)
+            let predicate1:NSPredicate = NSPredicate(format: "%K = %d", "mealsType", result[1] as! Int)
+            let predicate2:NSPredicate = NSPredicate(format: "%K = %d", "selfMade", result[2] as! Int )
+            let andPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [predicate,predicate1,predicate2])
+            _ = CoreDataManager.shareInstance.chooseFoodByPredicate(pridicate: andPredicate)
+            
+        }
     }
     
 }
 
 class ChooseFoodCollectionCell: UICollectionViewCell {
-    @IBOutlet weak var optionButton: UIButton!
-    
-    @IBAction func optionButtonClicked(_ sender: Any) {
-        
+    @IBOutlet weak var titleLabel: UILabel!
+    override var isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set {
+            if newValue {
+                super.isSelected = true
+                self.backgroundColor = ProjectHelper.shareInstance.colorWithRGB(red: 213, green: 213, blue: 213, alpha: 1.0)
+                self.titleLabel.textColor = UIColor.white
+                self.layer.cornerRadius = 10.0
+                self.layer.masksToBounds = true
+            } else if newValue == false {
+                super.isSelected = false
+                self.backgroundColor = UIColor.clear
+                self.titleLabel.textColor = UIColor.lightGray
+            }
+        }
     }
+    
 }
 
 class ChooseFoodTableViewCell : UITableViewCell{
