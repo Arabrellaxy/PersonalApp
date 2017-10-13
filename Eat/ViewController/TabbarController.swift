@@ -12,6 +12,7 @@ import UIKit
 class TabbarController:UITabBarController {
     var chooseFoodVC:ChooseFoodTableViewController! = nil
     var chooseFoodVCShown:Bool = false
+    var indicatorView:XYIndicatorView?
     
     override func awakeFromNib() {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for: UIControlState.normal)
@@ -57,6 +58,13 @@ class TabbarController:UITabBarController {
         chooseFoodVCShown = true
         if chooseFoodVC == nil {
             chooseFoodVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseFoodTableViewController") as! ChooseFoodTableViewController
+            chooseFoodVC.searchBlock = { [weak self]
+                (predicate:NSPredicate) -> Void  in
+                guard let `self` = self else { return }
+                self.removeChooseFoodVC()
+                self.showAnimation()
+                self.filterResultWithPredicate(predicate: predicate)
+            }
         }
         self.chooseFoodVC.view.frame = CGRect.init(x: 0, y: self.view.frame.height+100, width:self.view.frame.width, height:self.view.frame.height-100)
         UIView.animate(withDuration: 0.5, delay: 0.1, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -77,5 +85,49 @@ class TabbarController:UITabBarController {
                 self.showChooseFoodVC()
             }
         }
+    }
+    
+    func showAnimation() {
+        let view:UIView = UIApplication.shared.keyWindow!
+        if indicatorView == nil {
+            indicatorView = XYIndicatorView.init(frame: view.frame, type: .pacman, color: nil)
+        }
+        view.addSubview(indicatorView!)
+        indicatorView!.startAnimating()
+    }
+    func hideAnimation() {
+        if (indicatorView != nil) && ((indicatorView?.superview) != nil) {
+            indicatorView?.stopAnimating()
+            indicatorView?.removeFromSuperview()
+        }
+    }
+    
+    private func filterResultWithPredicate(predicate:NSPredicate) {
+        
+        CoreDataManager.shareInstance.chooseFoodByPredicate(predicate: predicate) { (food) in
+            DispatchQueue.main.async {
+                self.hideAnimation()
+                let tempFood = food ?? nil
+                let message = food == nil ? "哦豁，啥都没得" : tempFood!.name
+                let alertVC:UIAlertController = UIAlertController.init(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                let cancelAction:UIAlertAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+                let confirmAction:UIAlertAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.default, handler:{(action:UIAlertAction!) -> Void in
+                    
+                })
+                let oneMoreAction:UIAlertAction = UIAlertAction.init(title: "再来一次", style: UIAlertActionStyle.default, handler:{(action:UIAlertAction!) -> Void in
+                    self.showChooseFoodVC()
+                })
+                if food != nil {
+                    print(food?.name ??  "hi")
+                    alertVC.addAction(confirmAction)
+                }
+                alertVC.addAction(cancelAction)
+                alertVC.addAction(oneMoreAction)
+
+                self.present(alertVC, animated: true, completion: nil)
+            }
+            
+        }
+        
     }
 }

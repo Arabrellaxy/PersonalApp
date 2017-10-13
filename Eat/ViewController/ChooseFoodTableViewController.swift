@@ -12,6 +12,8 @@ import UIKit
 
 class ChooseFoodTableViewController:
 UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
+    var selectButton :UIButton!
+    
     let tableViewDataSource:NSArray = [
         "口味",
         "类型",
@@ -22,24 +24,31 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
        MealType.allValues,
        SelfMade.allValues
     ]
-
+    var searchBlock:((NSPredicate)->Void)?
+    
     override func awakeFromNib() {
         self.tableView.estimatedRowHeight = 60
         var frame:CGRect = CGRect.zero
         frame.size.height = 1
         self.tableView.tableHeaderView = UIView.init(frame: frame)
-        let button : UIButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
-        button.backgroundColor = UIColor.orange
-        button.setTitle("🎲", for: UIControlState.normal)
-        button.addTarget(self, action: #selector(startChooseFood), for: UIControlEvents.touchUpInside)
-        self.tableView.tableFooterView = button
+        selectButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
+        selectButton.backgroundColor = UIColor.orange
+        selectButton.setTitle("🎲", for: UIControlState.normal)
+        selectButton.addTarget(self, action: #selector(startChooseFood), for: UIControlEvents.touchUpInside)
+        self.tableView.tableFooterView = selectButton
         self.tableView.isScrollEnabled = false
+        self.clearsSelectionOnViewWillAppear = true
+
     }
     
     override func viewDidLoad() {
         
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 //    Table View Delegate & DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewDataSource.count
@@ -132,12 +141,15 @@ UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
             }
         }
         if result.count == tableViewDataSource.count {
+            
             //start to choose food
             let predicate:NSPredicate = NSPredicate(format: "%K = %d", "taste", result[0] as! Int)
             let predicate1:NSPredicate = NSPredicate(format: "%K = %d", "mealsType", result[1] as! Int)
             let predicate2:NSPredicate = NSPredicate(format: "%K = %d", "selfMade", result[2] as! Int )
             let andPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [predicate,predicate1,predicate2])
-            _ = CoreDataManager.shareInstance.chooseFoodByPredicate(pridicate: andPredicate)
+            
+            searchBlock!(andPredicate)
+        } else {
             
         }
     }

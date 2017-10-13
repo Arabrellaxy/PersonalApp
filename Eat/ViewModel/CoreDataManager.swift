@@ -11,57 +11,35 @@ import CoreData
 
 final class CoreDataManager {
     static let shareInstance = CoreDataManager()
-    
-     fileprivate lazy var managedObjectModel : NSManagedObjectModel = {
-        var managedObjectModel : NSManagedObjectModel = NSManagedObjectModel.mergedModel(from: nil)!
-        return managedObjectModel
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Eat")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
     }()
     
-    private lazy var persistenStoreCoordinator : NSPersistentStoreCoordinator = {
-        var persistenStoreCoordinator:NSPersistentStoreCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: self.managedObjectModel)
-        let userStoreURL:NSURL = self.applicationDocumentsDirectory().appendingPathComponent(AppConfigConstants.storeName)! as NSURL
-        do {
-            try persistenStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: userStoreURL as URL, options: nil)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        return persistenStoreCoordinator
-        
-    }()
-    
-    private lazy var managedObjectContext:NSManagedObjectContext = {
-        var managedObjecContext:NSManagedObjectContext = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
-        let tempPersistentCoordinator:NSPersistentStoreCoordinator? = self.persistenStoreCoordinator
-        if tempPersistentCoordinator != nil {
-            managedObjecContext.persistentStoreCoordinator = tempPersistentCoordinator
-        }
-        return managedObjecContext
-    }()
-    
-    private init(){
-        
-    }
-
-    func applicationDocumentsDirectory()->NSURL {
-        return (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last)! as NSURL
-    }
-    
-    func insertNewEntity(entityName:String) -> NSManagedObject {
-        let managedObjectContext = self.managedObjectContext
-        let managedObject : NSManagedObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: managedObjectContext)
-       
-        return managedObject
-    }
-    
-    func save() -> Bool {
-        var result = true
-        do {
-            try managedObjectContext.save()
-        } catch {
-            result = false
-            fatalError("Failure to save context: \(error)")
-        }
-        return result
+    func insertFoods(foodsArray:NSArray) -> Void {
+        persistentContainer.performBackgroundTask({ (backgroundContext) in
+            for foodArray:NSArray in (foodsArray as! [NSArray]) {
+                for tempDictionary in foodArray  {
+                    if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
+                        let food:Foods = Foods(context:backgroundContext)
+                        for (key,value) in tempDictionary {
+                            food.setValue(value, forKey: key)
+                        }
+                    }
+                }
+            }
+            do {
+                try backgroundContext.save()
+            } catch {
+                // handle error
+                print("error", error)
+            }
+        })
     }
     
     func findAllEntitiesByName(entityName:String,pridicate:NSPredicate?) -> NSArray {
@@ -71,20 +49,31 @@ final class CoreDataManager {
             fetchRequest.predicate = pridicate
         }
         do {
-            results = try managedObjectContext.fetch(fetchRequest) as NSArray
+            results = try persistentContainer.viewContext.fetch(fetchRequest) as NSArray
         } catch {
             fatalError("Failed to fetch entity: \(error)")
         }
         return results
     }
     
-    
-    func chooseFoodByPredicate(pridicate:NSPredicate?) -> Foods {
-        let foods:NSArray = self.findAllEntitiesByName(entityName: "Foods", pridicate: pridicate)
-        let x = UInt32(foods.count)
-        
-        let r = Int(arc4random_uniform(x))
-        return foods[r] as! Foods
+    func chooseFoodByPredicate(predicate:NSPredicate?, completion: @escaping (_ food: Foods?) -> Void) {
+        persistentContainer.performBackgroundTask { (backgroundContext) in
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Foods")
+            fetchRequest.predicate = predicate
+            do {
+                let results = try backgroundContext.fetch(fetchRequest) as! [Foods]
+                let x = UInt32(results.count)
+                
+                let r = Int(arc4random_uniform(x))
+                if r <= results.count && results.count > 0 {
+                    completion(results[r])
+                } else {
+                    completion(nil)
+                }
+            } catch {
+                fatalError("Failed to fetch foods: \(error)")
+            }
+        }
     }
     
 }

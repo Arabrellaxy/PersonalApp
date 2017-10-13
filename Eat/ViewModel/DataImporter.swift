@@ -1,4 +1,4 @@
-//
+
 //  DataImporter.swift
 //  Eat
 //
@@ -13,7 +13,7 @@ class DataImporter {
         let fullResourceName : NSString = resourceName as NSString
         let resourceType : String = fullResourceName.pathExtension
         let entityName : String = fullResourceName.deletingPathExtension
-
+        
         let total : NSInteger = CoreDataManager.shareInstance.findAllEntitiesByName(entityName: entityName,pridicate: nil).count
         var localCount : NSInteger = 0;
         if let path = Bundle.main.path(forResource: entityName, ofType: resourceType) {
@@ -25,36 +25,12 @@ class DataImporter {
                 }
                 if localCount != total {
                     if total == 0 {
-                        for foodArray:NSArray in (array as! [NSArray]) {
-                            for tempDictionary in foodArray  {
-                                if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
-                                    let food:Foods = CoreDataManager.shareInstance.insertNewEntity(entityName: entityName) as! Foods
-                                    for (key,value) in tempDictionary {
-                                        food.setValue(value, forKey: key)
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        let lastArray:NSArray = array.object(at: array.count-1) as! NSArray
-                        for tempDictionary in lastArray  {
-                            if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
-                                let food:Foods = CoreDataManager.shareInstance.insertNewEntity(entityName: entityName) as! Foods
-                                for (key,value) in tempDictionary {
-                                    food.setValue(value, forKey: key)
-                                }
-                            }
-                        }
-                    }
-                    if CoreDataManager.shareInstance.save() {
-                       print("import successfully")
-                    } else {
-                        print("wrong")
+                        CoreDataManager.shareInstance.insertFoods(foodsArray: array)
                     }
                 }
             }
             
         }
-
+        
     }
 }
