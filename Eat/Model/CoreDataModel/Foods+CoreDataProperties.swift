@@ -26,6 +26,8 @@ extension Foods {
     @NSManaged public var foodID: String
     @NSManaged public var minPrice: Double
     @NSManaged public var maxPrice: Double
-    @NSManaged public var selfMade: Bool
+    @NSManaged public var selfMade: Int32
     @NSManaged public var taste: Int32
+    @NSManaged public var imagePath: String
+
 }

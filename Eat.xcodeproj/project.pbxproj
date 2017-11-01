@@ -31,6 +31,10 @@
 		4F8C91471F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C91461F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift */; };
 		4F8C91491F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C91481F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift */; };
 		4F8C914B1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C914A1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift */; };
+		4FB56E3D1F9858DC00917B70 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E3C1F9858DC00917B70 /* MenuTableViewController.swift */; };
+		4FB56E3F1F98593200917B70 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E3E1F98593200917B70 /* MenuTableViewCell.swift */; };
+		4FB56E411F98908500917B70 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E401F98908500917B70 /* FileHelper.swift */; };
+		4FFFF0D51FA31913000989AC /* FoodDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFF0D41FA31913000989AC /* FoodDetailTableViewController.swift */; };
 		98A08D3787F98046E78C9536 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE571E3AFCECE9197926524B /* Pods_EatTests.framework */; };
 		CE578AC870DCCB4A4607FC36 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */; };
 		D35BBC01158C4A86243CCC4F /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B8D82C367D095565CEF0A1 /* Pods_Eat.framework */; };
@@ -86,6 +90,10 @@
 		4F8C91461F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		4F8C91481F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
 		4F8C914A1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		4FB56E3C1F9858DC00917B70 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		4FB56E3E1F98593200917B70 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		4FB56E401F98908500917B70 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		4FFFF0D41FA31913000989AC /* FoodDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailTableViewController.swift; sourceTree = "<group>"; };
 		527E098F2552DCEA04F0B230 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1789F885F87C60EB6539C1 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84F9576BF18E9BB65F83D31C /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 			children = (
 				4F14537E1F0645ED006DF308 /* HomePage */,
 				4F8C91421F8DCA2B00BF8313 /* XYIndicatorView.swift */,
+				4FB56E3E1F98593200917B70 /* MenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +237,8 @@
 				4F22B9F11F0352EC00F510F9 /* ViewController.swift */,
 				4F14537B1F0639C8006DF308 /* TabbarController.swift */,
 				103559AD1F069BA4008593BF /* ChooseFoodTableViewController.swift */,
+				4FB56E3C1F9858DC00917B70 /* MenuTableViewController.swift */,
+				4FFFF0D41FA31913000989AC /* FoodDetailTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -291,6 +302,7 @@
 				4F8C91441F8DCC7400BF8313 /* XYIndicator */,
 				4F6FA8771F14CEC300243813 /* UserDefaultHelper.swift */,
 				4F6FA8791F14D34E00243813 /* ProjectHelper.swift */,
+				4FB56E401F98908500917B70 /* FileHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -399,6 +411,9 @@
 		4F10419E1F023B1600EAC82C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "谢艳";
@@ -616,9 +631,12 @@
 				4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */,
 				4F8C914B1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift in Sources */,
 				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
+				4FB56E3D1F9858DC00917B70 /* MenuTableViewController.swift in Sources */,
 				4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */,
+				4FB56E411F98908500917B70 /* FileHelper.swift in Sources */,
 				4F8C91491F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift in Sources */,
 				4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */,
+				4FFFF0D51FA31913000989AC /* FoodDetailTableViewController.swift in Sources */,
 				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
 				4F8C91431F8DCA2B00BF8313 /* XYIndicatorView.swift in Sources */,
 				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
@@ -626,6 +644,7 @@
 				4F14536C1F04A1AF006DF308 /* Config.swift in Sources */,
 				4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
+				4FB56E3F1F98593200917B70 /* MenuTableViewCell.swift in Sources */,
 				4F8C91471F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
 				4F6FA8781F14CF9700243813 /* UserDefaultHelper.swift in Sources */,

@@ -31,9 +31,9 @@ class TabbarController:UITabBarController {
     }
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if chooseFoodVC == nil {
-            chooseFoodVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseFoodTableViewController") as! ChooseFoodTableViewController
-        }
+//        if chooseFoodVC == nil {
+//            chooseFoodVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseFoodTableViewController") as! ChooseFoodTableViewController
+//        }
     }
     override func motionCancelled(_ motion: UIEventSubtype, with event: UIEvent?) {
         
@@ -49,6 +49,7 @@ class TabbarController:UITabBarController {
     
     func removeChooseFoodVC() -> Void {
         self.chooseFoodVC.view .removeFromSuperview()
+        self.chooseFoodVC = nil
         chooseFoodVCShown = false
         self.tabBar.isHidden = false
     }
@@ -108,7 +109,7 @@ class TabbarController:UITabBarController {
             DispatchQueue.main.async {
                 self.hideAnimation()
                 let tempFood = food ?? nil
-                let message = food == nil ? "哦豁，啥都没得" : tempFood!.name
+                let message = tempFood?.name ?? "哦豁，啥都没得"
                 let alertVC:UIAlertController = UIAlertController.init(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
                 let cancelAction:UIAlertAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
                 let confirmAction:UIAlertAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.default, handler:{(action:UIAlertAction!) -> Void in
@@ -117,8 +118,7 @@ class TabbarController:UITabBarController {
                 let oneMoreAction:UIAlertAction = UIAlertAction.init(title: "再来一次", style: UIAlertActionStyle.default, handler:{(action:UIAlertAction!) -> Void in
                     self.showChooseFoodVC()
                 })
-                if food != nil {
-                    print(food?.name ??  "hi")
+                if tempFood != nil {
                     alertVC.addAction(confirmAction)
                 }
                 alertVC.addAction(cancelAction)

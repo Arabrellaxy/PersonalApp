@@ -25,7 +25,7 @@ extension Foods {
                 continue
             }
             if key == "selfMade" {
-                food.selfMade = Bool((value as? String)!)!
+                food.selfMade = Int32((value as? String)!)!
                 continue
             }
             

@@ -62,8 +62,9 @@ enum MealType:Int {
 enum SelfMade:Int {
     case buy
     case selfMade
+    case both
     
-    static let allValues = [buy,selfMade]
+    static let allValues = [buy,selfMade,both]
     
     var description : String {
         get {
@@ -72,7 +73,10 @@ enum SelfMade:Int {
                 return "自制"
             case .buy:
                 return "外出"
+            case .both:
+                return "自制/外出"
             }
+            
         }
     }
 }

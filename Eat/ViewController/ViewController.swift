@@ -13,12 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.title = "😍我们的营养餐😍"
-       
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "菜单", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showMenu))
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    func showMenu(barItem:UIBarButtonItem) -> Void {
+//        
+//    }
 }
 

@@ -18,28 +18,34 @@ final class CoreDataManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
     
-    func insertFoods(foodsArray:NSArray) -> Void {
+    func insertFoods(foodsArray:NSArray) -> Bool {
+        var success = true
+        let semaphore = DispatchSemaphore(value: 0)
         persistentContainer.performBackgroundTask({ (backgroundContext) in
-            for foodArray:NSArray in (foodsArray as! [NSArray]) {
-                for tempDictionary in foodArray  {
-                    if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
-                        let food:Foods = Foods(context:backgroundContext)
-                        for (key,value) in tempDictionary {
-                            food.setValue(value, forKey: key)
-                        }
+            for tempDictionary in foodsArray  {
+                if let tempDictionary = tempDictionary as? Dictionary<String, AnyObject> {
+                    let food:Foods = Foods(context:backgroundContext)
+                    food.foodID = NSUUID.init().uuidString
+                    for (key,value) in tempDictionary {
+                        food.setValue(value, forKey: key)
                     }
                 }
             }
             do {
                 try backgroundContext.save()
+                semaphore.signal()
             } catch {
                 // handle error
-                print("error", error)
+                success = false
+                semaphore.signal()
             }
         })
+        semaphore.wait()
+        return success
     }
     
     func findAllEntitiesByName(entityName:String,pridicate:NSPredicate?) -> NSArray {
@@ -58,14 +64,15 @@ final class CoreDataManager {
     
     func chooseFoodByPredicate(predicate:NSPredicate?, completion: @escaping (_ food: Foods?) -> Void) {
         persistentContainer.performBackgroundTask { (backgroundContext) in
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Foods")
+            let fetchRequest:NSFetchRequest<Foods> = Foods.fetchRequest()
             fetchRequest.predicate = predicate
             do {
-                let results = try backgroundContext.fetch(fetchRequest) as! [Foods]
+                let results = try backgroundContext.fetch(fetchRequest)
                 let x = UInt32(results.count)
-                
+
                 let r = Int(arc4random_uniform(x))
                 if r <= results.count && results.count > 0 {
+                    sleep(1)
                     completion(results[r])
                 } else {
                     completion(nil)
@@ -76,4 +83,20 @@ final class CoreDataManager {
         }
     }
     
+    func saveFoodEntityPropertyValue(uniqueId:String, propertyName:String,newValue:Any)->Void {
+        persistentContainer.performBackgroundTask { (backgroundContext) in
+            let fetchRequest:NSFetchRequest<Foods> = Foods.fetchRequest()
+            let predicate:NSPredicate = NSPredicate(format: "%K = %@", "foodID", uniqueId)
+            fetchRequest.predicate = predicate
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let food = results[0] as Foods
+                food.setValue(newValue, forKey: propertyName)
+                try backgroundContext.save()
+            } catch {
+                fatalError("Failed to save foods: \(error)")
+            }        
+        }
+    }
+
 }
