@@ -99,4 +99,63 @@ final class CoreDataManager {
         }
     }
 
+    func saveFoodForRecords(food:Foods,mealsType:Int32) -> Void {
+        self.saveFoodsRecord(food: food, mealsType: mealsType, date: Date())
+    }
+    
+    func saveFoodsRecord(food:Foods,mealsType:Int32,date:Date) -> Void {
+        persistentContainer.performBackgroundTask { (backgroundContext) in
+            let fetchRequest:NSFetchRequest<FoodRecords> = FoodRecords.fetchRequest()
+            let (dateFrom,dateEnd) = ProjectHelper.shareInstance.startAndEndOfDate(date: date)
+            
+            // Set predicate as date
+            let datePredicate = NSPredicate(format: "(%@ <= date) AND (date < %@) AND mealType = %d", dateFrom as CVarArg, dateEnd as CVarArg,mealsType)
+            fetchRequest.predicate = datePredicate
+            
+            //food
+            let foodFetchRequest:NSFetchRequest<Foods> = Foods.fetchRequest()
+            let predicate:NSPredicate = NSPredicate(format: "%K = %@", "foodID", food.foodID)
+            foodFetchRequest.predicate = predicate
+            var tempFood :Foods?
+            do {
+                let results = try backgroundContext.fetch(foodFetchRequest)
+                tempFood = results[0] as Foods
+            } catch {
+                fatalError("Failed to fetch foods: \(error)")
+            }
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if results.count > 0 {
+                    let record = results[0] as FoodRecords
+                    record.food = tempFood
+                } else {
+                    let record:FoodRecords = FoodRecords(context:backgroundContext)
+                    record.date = NSDate()
+                    record.mealType = mealsType
+                    record.food = tempFood
+                }
+                try backgroundContext.save()
+            } catch {
+                // handle error
+                fatalError("Failed to save record: \(error)")
+            }
+        }
+    }
+    
+    func foodRecordsOfDay(date:Date,completion: @escaping (_ record: [FoodRecords]?) -> Void) {
+            let fetchRequest:NSFetchRequest<FoodRecords> = FoodRecords.fetchRequest()
+            let (dateFrom,dateEnd) = ProjectHelper.shareInstance.startAndEndOfDate(date: date)
+            
+            // Set predicate as date
+            let datePredicate = NSPredicate(format: "(%@ <= date) AND (date < %@)", dateFrom as CVarArg, dateEnd as CVarArg)
+            fetchRequest.predicate = datePredicate
+            do {
+                let  results = try persistentContainer.viewContext.fetch(fetchRequest)
+                completion(results)
+            } catch {
+                // handle error
+                fatalError("Failed to save record: \(error)")
+            }
+    }
 }

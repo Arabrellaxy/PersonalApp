@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		103559AE1F069BA4008593BF /* ChooseFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103559AD1F069BA4008593BF /* ChooseFoodTableViewController.swift */; };
 		4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041A91F023B1600EAC82C /* AppDelegate.swift */; };
-		4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */; };
 		4F1041C21F023B1600EAC82C /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041C11F023B1600EAC82C /* EatTests.swift */; };
 		4F1041CD1F023B1600EAC82C /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1041CC1F023B1600EAC82C /* EatUITests.swift */; };
 		4F14536C1F04A1AF006DF308 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14536B1F04A1AF006DF308 /* Config.swift */; };
@@ -31,9 +30,19 @@
 		4F8C91471F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C91461F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift */; };
 		4F8C91491F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C91481F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift */; };
 		4F8C914B1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C914A1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift */; };
+		4F9FE2C81FB19435005DA669 /* DayEventCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE2C71FB19435005DA669 /* DayEventCollectionView.swift */; };
+		4F9FE2CA1FB19550005DA669 /* DayEventTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE2C91FB19550005DA669 /* DayEventTableView.swift */; };
 		4FB56E3D1F9858DC00917B70 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E3C1F9858DC00917B70 /* MenuTableViewController.swift */; };
 		4FB56E3F1F98593200917B70 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E3E1F98593200917B70 /* MenuTableViewCell.swift */; };
 		4FB56E411F98908500917B70 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB56E401F98908500917B70 /* FileHelper.swift */; };
+		4FCCA6C21FAAC0E50025C83C /* Eat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6C01FAAC0E50025C83C /* Eat.xcdatamodeld */; };
+		4FCCA6C61FAAC2110025C83C /* FoodRecords+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6C41FAAC2110025C83C /* FoodRecords+CoreDataProperties.swift */; };
+		4FCCA6C71FAAC2110025C83C /* FoodRecords+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6C51FAAC2110025C83C /* FoodRecords+CoreDataClass.swift */; };
+		4FCCA6C91FAAF5570025C83C /* WeekHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6C81FAAF5570025C83C /* WeekHeaderView.swift */; };
+		4FCCA6CB1FAAFB660025C83C /* DayCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6CA1FAAFB660025C83C /* DayCollectionView.swift */; };
+		4FCCA6CE1FAAFE5C0025C83C /* XYYearNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6CD1FAAFE5C0025C83C /* XYYearNode.swift */; };
+		4FCCA6D01FAB12B70025C83C /* XYMonthNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6CF1FAB12B70025C83C /* XYMonthNode.swift */; };
+		4FCCA6D21FAB12C00025C83C /* XYDayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA6D11FAB12C00025C83C /* XYDayNode.swift */; };
 		4FFFF0D51FA31913000989AC /* FoodDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFF0D41FA31913000989AC /* FoodDetailTableViewController.swift */; };
 		98A08D3787F98046E78C9536 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE571E3AFCECE9197926524B /* Pods_EatTests.framework */; };
 		CE578AC870DCCB4A4607FC36 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BEBE85F6E6BCAA898714CD /* Pods_EatUITests.framework */; };
@@ -63,7 +72,6 @@
 		31DA5641A4512FD0D51AD418 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		4F1041A61F023B1600EAC82C /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041A91F023B1600EAC82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat.xcdatamodel; sourceTree = "<group>"; };
 		4F1041B81F023B1600EAC82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F1041BD1F023B1600EAC82C /* EatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1041C11F023B1600EAC82C /* EatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatTests.swift; sourceTree = "<group>"; };
@@ -90,9 +98,20 @@
 		4F8C91461F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		4F8C91481F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
 		4F8C914A1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		4F9FE2C71FB19435005DA669 /* DayEventCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEventCollectionView.swift; sourceTree = "<group>"; };
+		4F9FE2C91FB19550005DA669 /* DayEventTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEventTableView.swift; sourceTree = "<group>"; };
 		4FB56E3C1F9858DC00917B70 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		4FB56E3E1F98593200917B70 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		4FB56E401F98908500917B70 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		4FCCA6C11FAAC0E50025C83C /* Eat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat.xcdatamodel; sourceTree = "<group>"; };
+		4FCCA6C31FAAC1870025C83C /* Eat1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eat1.2.xcdatamodel; sourceTree = "<group>"; };
+		4FCCA6C41FAAC2110025C83C /* FoodRecords+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FoodRecords+CoreDataProperties.swift"; path = "/Users/GorgeousXie/Desktop/PersonalApp/Eat/Model/CoreDataModel/FoodRecords+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		4FCCA6C51FAAC2110025C83C /* FoodRecords+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FoodRecords+CoreDataClass.swift"; path = "/Users/GorgeousXie/Desktop/PersonalApp/Eat/Model/CoreDataModel/FoodRecords+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		4FCCA6C81FAAF5570025C83C /* WeekHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderView.swift; sourceTree = "<group>"; };
+		4FCCA6CA1FAAFB660025C83C /* DayCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionView.swift; sourceTree = "<group>"; };
+		4FCCA6CD1FAAFE5C0025C83C /* XYYearNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYYearNode.swift; sourceTree = "<group>"; };
+		4FCCA6CF1FAB12B70025C83C /* XYMonthNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYMonthNode.swift; sourceTree = "<group>"; };
+		4FCCA6D11FAB12C00025C83C /* XYDayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYDayNode.swift; sourceTree = "<group>"; };
 		4FFFF0D41FA31913000989AC /* FoodDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailTableViewController.swift; sourceTree = "<group>"; };
 		527E098F2552DCEA04F0B230 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1789F885F87C60EB6539C1 /* Pods-EatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +175,7 @@
 		4F1041A81F023B1600EAC82C /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				4FCCA6C01FAAC0E50025C83C /* Eat.xcdatamodeld */,
 				4F6FA8761F14CEA800243813 /* Utils */,
 				4F14537D1F0645CC006DF308 /* View */,
 				4F22B9F41F03538800F510F9 /* Resource */,
@@ -166,7 +186,6 @@
 				4F22B9EE1F03529C00F510F9 /* ViewModel */,
 				4F1041A91F023B1600EAC82C /* AppDelegate.swift */,
 				4F1041B81F023B1600EAC82C /* Info.plist */,
-				4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -211,6 +230,10 @@
 			isa = PBXGroup;
 			children = (
 				4F14537F1F0645FC006DF308 /* ChooseFood.swift */,
+				4FCCA6C81FAAF5570025C83C /* WeekHeaderView.swift */,
+				4FCCA6CA1FAAFB660025C83C /* DayCollectionView.swift */,
+				4F9FE2C71FB19435005DA669 /* DayEventCollectionView.swift */,
+				4F9FE2C91FB19550005DA669 /* DayEventTableView.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -290,6 +313,8 @@
 		4F22BA041F038F1800F510F9 /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
+				4FCCA6C51FAAC2110025C83C /* FoodRecords+CoreDataClass.swift */,
+				4FCCA6C41FAAC2110025C83C /* FoodRecords+CoreDataProperties.swift */,
 				4F22BA051F038F1800F510F9 /* Foods+CoreDataProperties.swift */,
 				4F22BA061F038F1800F510F9 /* Foods+CoreDataClass.swift */,
 			);
@@ -299,6 +324,7 @@
 		4F6FA8761F14CEA800243813 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4FCCA6CC1FAAFE330025C83C /* Calendar */,
 				4F8C91441F8DCC7400BF8313 /* XYIndicator */,
 				4F6FA8771F14CEC300243813 /* UserDefaultHelper.swift */,
 				4F6FA8791F14D34E00243813 /* ProjectHelper.swift */,
@@ -315,6 +341,16 @@
 				4F8C914A1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift */,
 			);
 			path = XYIndicator;
+			sourceTree = "<group>";
+		};
+		4FCCA6CC1FAAFE330025C83C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4FCCA6CD1FAAFE5C0025C83C /* XYYearNode.swift */,
+				4FCCA6CF1FAB12B70025C83C /* XYMonthNode.swift */,
+				4FCCA6D11FAB12C00025C83C /* XYDayNode.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		5FF2F57351D49EDB1845B878 /* Pods */ = {
@@ -628,25 +664,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCCA6C71FAAC2110025C83C /* FoodRecords+CoreDataClass.swift in Sources */,
+				4FCCA6C61FAAC2110025C83C /* FoodRecords+CoreDataProperties.swift in Sources */,
 				4F1453801F0645FC006DF308 /* ChooseFood.swift in Sources */,
 				4F8C914B1F8DD3C800BF8313 /* XYActivityIndicatorShape.swift in Sources */,
-				4F1041B21F023B1600EAC82C /* Eat.xcdatamodeld in Sources */,
 				4FB56E3D1F9858DC00917B70 /* MenuTableViewController.swift in Sources */,
+				4FCCA6D21FAB12C00025C83C /* XYDayNode.swift in Sources */,
+				4FCCA6D01FAB12B70025C83C /* XYMonthNode.swift in Sources */,
 				4F22BA081F038F1800F510F9 /* Foods+CoreDataClass.swift in Sources */,
+				4FCCA6CE1FAAFE5C0025C83C /* XYYearNode.swift in Sources */,
+				4F9FE2CA1FB19550005DA669 /* DayEventTableView.swift in Sources */,
 				4FB56E411F98908500917B70 /* FileHelper.swift in Sources */,
 				4F8C91491F8DCD7600BF8313 /* XYActivityIndicatorAnimationPacman.swift in Sources */,
 				4F22BA0A1F038FCB00F510F9 /* FoodsExtension.swift in Sources */,
 				4FFFF0D51FA31913000989AC /* FoodDetailTableViewController.swift in Sources */,
 				4F22BA071F038F1800F510F9 /* Foods+CoreDataProperties.swift in Sources */,
+				4FCCA6C91FAAF5570025C83C /* WeekHeaderView.swift in Sources */,
 				4F8C91431F8DCA2B00BF8313 /* XYIndicatorView.swift in Sources */,
+				4FCCA6C21FAAC0E50025C83C /* Eat.xcdatamodeld in Sources */,
 				4F22B9F01F0352CF00F510F9 /* CoreDataManager.swift in Sources */,
 				103559AE1F069BA4008593BF /* ChooseFoodTableViewController.swift in Sources */,
 				4F14536C1F04A1AF006DF308 /* Config.swift in Sources */,
+				4FCCA6CB1FAAFB660025C83C /* DayCollectionView.swift in Sources */,
 				4F14537C1F0639C8006DF308 /* TabbarController.swift in Sources */,
 				4F22B9F21F0352EC00F510F9 /* ViewController.swift in Sources */,
 				4FB56E3F1F98593200917B70 /* MenuTableViewCell.swift in Sources */,
 				4F8C91471F8DCCDD00BF8313 /* XYActivityIndicatorAnimationDelegate.swift in Sources */,
 				4F1041AA1F023B1600EAC82C /* AppDelegate.swift in Sources */,
+				4F9FE2C81FB19435005DA669 /* DayEventCollectionView.swift in Sources */,
 				4F6FA8781F14CF9700243813 /* UserDefaultHelper.swift in Sources */,
 				4F1453731F04D4DF006DF308 /* DataImporter.swift in Sources */,
 				4F6FA87A1F14D34E00243813 /* ProjectHelper.swift in Sources */,
@@ -920,12 +965,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4F1041B01F023B1600EAC82C /* Eat.xcdatamodeld */ = {
+		4FCCA6C01FAAC0E50025C83C /* Eat.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */,
+				4FCCA6C31FAAC1870025C83C /* Eat1.2.xcdatamodel */,
+				4FCCA6C11FAAC0E50025C83C /* Eat.xcdatamodel */,
 			);
-			currentVersion = 4F1041B11F023B1600EAC82C /* Eat.xcdatamodel */;
+			currentVersion = 4FCCA6C31FAAC1870025C83C /* Eat1.2.xcdatamodel */;
 			path = Eat.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

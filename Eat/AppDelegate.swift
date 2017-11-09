@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaultHelper.shareInstance.firstTimeLaunch = false
         }
         UINavigationBar.appearance().tintColor = UIColor.orange
+        UINavigationBar.appearance().barTintColor = ProjectHelper.shareInstance.colorWithRGB(red: 248, green: 248, blue: 248, alpha: 1)
         return true
     }
 

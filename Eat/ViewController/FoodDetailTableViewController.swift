@@ -17,6 +17,7 @@ class FoodDetailTableViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var imageViewBottomCons: NSLayoutConstraint!
     @IBOutlet weak var toolBar: UIToolbar!
     var food:Foods?
+    var selectedType : Int32 = 0 //0 for breakfast,1 for lunch,2 for dinner
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = food?.name
@@ -100,16 +101,18 @@ class FoodDetailTableViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func chooseForBreakFast(button:UIButton) -> Void {
-        
+        button.isSelected = !button.isSelected
+        selectedType = 0
     }
     func chooseForDinner(button:UIButton) -> Void {
         button.isSelected = !button.isSelected
         let tempTag = button.tag == 0 ? 1 : 0
+        selectedType = button.tag == 0 ? 1 : 2
         let barItem :UIBarButtonItem =  self.toolBar.items![tempTag]
         let button:UIButton = barItem.customView as! UIButton
         button.isSelected = false
     }
     func confirmChoice(button:UIButton) -> Void {
-        
+        CoreDataManager.shareInstance.saveFoodForRecords(food: food!, mealsType: selectedType)
     }
 }
